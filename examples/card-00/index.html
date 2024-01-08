@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Card component</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root" style="width: 300px"></div>
+
+    <script type="module">
+      import Card from "./card.js";
+
+      const product = {
+        id: "1",
+        image:
+          "https://content1.rozetka.com.ua/goods/images/big_tile/25101161.jpg",
+        title:
+          "Ноутбук Acer Aspire 3 A315-57G-336G (NX.HZREU.01S) Charcoal Black",
+        rating: 2.89,
+        price: 15999,
+        category: "laptops",
+        brand: "acer",
+      };
+
+      const card = new Card(product);
+
+      root.append(card.element);
+    </script>
+  </body>
+</html>

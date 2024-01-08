@@ -13,8 +13,10 @@ describe("sum", () => {
     expect(sum(-3, -2)).toBe(-5);
   });
 
-  xit("should return zero like default value", () => {
+  it("should use zero like default value for each argument", () => {
     expect(sum()).toBe(0);
+    expect(sum(1)).toBe(1);
+    expect(sum(undefined, 1)).toBe(1);
   });
 
   it("should throw an error if at least one of the arguments is not a number", () => {
