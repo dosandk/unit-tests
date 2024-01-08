@@ -1,0 +1,18 @@
+<html lang="en">
+  <head>
+    <title>Sum</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      const sum = (a = 0, b = 0) => {
+        return a + b;
+      };
+
+      console.assert(sum(1, 2) === 3, "should return 3");
+      console.assert(sum(-1, 2) === 1, "should return 1");
+      console.assert(sum() === 0, "should return 0");
+    </script>
+  </body>
+</html>
