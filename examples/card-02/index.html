@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Card component</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root" style="width: 300px"></div>
+
+    <script type="module">
+      import Card from "./card.js";
+
+      const httpRequest = {
+        async get(url = "", options = {}) {
+          try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+
+            return result;
+          } catch (error) {
+            throw new Error(`Error: something went wrong ${error.message}`);
+          }
+        },
+      };
+
+      const url =
+        "https://online-store.bootcamp.place/api/products?_page=1&_limit=1";
+      const card = new Card(url, httpRequest);
+
+      root.append(card.element);
+    </script>
+  </body>
+</html>
