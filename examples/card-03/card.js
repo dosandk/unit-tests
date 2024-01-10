@@ -65,25 +65,23 @@ export default class Card {
         this.setActive();
       }
     });
-
-    document.addEventListener("removed-from-cart", (event) => {
-      if (event.detail === this.data.id) {
-        this.removeActive();
-      }
-    });
   }
 
   setActive() {
     const { addToCartBtn } = this.subElements;
-    this.subElements.addToCartBtn.innerHTML = "Remove from cart";
+
+    addToCartBtn.innerHTML = "Remove from cart";
     addToCartBtn.classList.add("active");
+
     this.inStore = true;
   }
 
   removeActive() {
     const { addToCartBtn } = this.subElements;
-    this.subElements.addToCartBtn.innerHTML = "Add to cart";
+
+    addToCartBtn.innerHTML = "Add to cart";
     addToCartBtn.classList.remove("active");
+
     this.inStore = false;
   }
 
